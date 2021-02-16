@@ -2,12 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 const helmet = require('helmet')
+const path = require('path')
+
 
 app.use(helmet())
 
 
 app.get('/', (req, res) => {
-	return res.send('Hi, welcome to bry.sh')
+	return res.sendFile(path.resolve(__dirname, '../public/html/index.html'))
 })
 
 
